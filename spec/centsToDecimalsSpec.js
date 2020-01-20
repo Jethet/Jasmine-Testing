@@ -16,7 +16,7 @@ describe("centsToDecimals function", function () { // Describes the suite / grou
  
   it("Returns undefined when parameter passed is a string containing number characters", function () {
     // ... complete the below test assertion
-    expect(Function_To_Test(parameter)).toEqual(expectedResult);
+    expect(centsToDecimals('1234')).toEqual(undefined);
   });
 
   it("Returns undefined when NaN value is passed as a parameter", function () {
@@ -25,32 +25,34 @@ describe("centsToDecimals function", function () { // Describes the suite / grou
 
   it("Returns undefined when undefined value is passed as a parameter", function () {
     // ... complete the below test assertion 
-    expect(Function_To_Test(parameter)).toEqual(expectedResult);    
+    expect(centsToDecimals(undefined)).toEqual(undefined);    
   });
 
   it("Returns undefined when parameter is not passed.", function () {
     // ... complete the below test assertion
-    expect(Function_To_Test(parameter)).toEqual(expectedResult);    
+    expect(centsToDecimals()).toEqual(undefined);    
 
   });
 
   it("Returns undefined when parameter is not passed.", function () {
     // ... complete the below test assertion
-    expect(Function_To_Test(parameter)).toEqual(expectedResult);    
+    expect(centsToDecimals()).toEqual(undefined);    
   });
 
   it("Should convert a number of cents to a string represenation of a floating point number.", function () {
     // ... complete the below test assertion
-    expect(Function_To_Test(parameter)).toEqual(expectedResult);    
+    expect(centsToDecimals(12345).slice(0,6)).toEqual('123.45');    // Slicing used to get to six chars (five numbers plus decimal point .)
   });
 
   it("Should convert a number of cents and return a string represenation of a floating point number.", function () {
     // ... complete the below test assertion
-    expect(Function_To_Test(parameter)).toEqual(expectedResult);    
+    var test1 = centsToDecimals(123);
+    console.log(test1)
+    expect(centsToDecimals(123).slice(0,4)).toEqual('1.23');    
   });
 
   it("Should return a string representation of a number with `$` sign appended at the end.", function () {
     // ... complete the below test assertion
-    expect(Function_To_Test(parameter)).toEqual(expectedResult);    
+    expect(centsToDecimals(12345)).toEqual('123.45$');    
   });
 });
